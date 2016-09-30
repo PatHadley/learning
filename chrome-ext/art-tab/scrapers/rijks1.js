@@ -4,11 +4,11 @@ const unirest = require('unirest');
 
 console.log ("I'm working!");
 
-var objectNums = [];
+var objectDetails = [];
 
 
-var writeArray = function(objectNums){
-  fs.writeFile('OilPaintingObjectNums.json', "["+objectNums+"]", function(err){
+var writeArray = function(objectDetails){
+  fs.writeFile('OilPaintingObjects.json', "["+objectDetails+"]", function(err){
     if (err) return console.log(err);
   });
 };
@@ -17,27 +17,50 @@ var writeArray = function(objectNums){
 
 var processRijks = function(output){
   if (output){
-    // console.log(output.title);
-    // console.log(output.objectNumber);
-    objectNums.push('\n"'+output.objectNumber+'"');
-    writeArray(objectNums);
+    var currentObject = {
+      id: output.objectNumber,
+      title: output.title,
+      creator: output.principalMakers[0].name,
+      imgUrl: output.webImage.url,
+    };
+    // console.log(currentObject);
+    currentObjString = JSON.stringify(currentObject);
+    objectDetails.push('\n'+currentObjString);
+    writeArray(objectDetails);
+    // console.log(objectDetails);
   };
 };
 
 
-var getRijks = function (){
+// var getRijks = function (){
 
-  for (var i = 1; i <= 1000; i++) {
-    unirest.get("https://www.rijksmuseum.nl/api/en/collection/sk-c-"+i+"?key=w5b8sjYU&format=json&imgonly=true")
+//   for (var i = 2; i <= 1000; i++) {
+//     unirest.get("https://www.rijksmuseum.nl/api/en/collection/sk-c-"+i+"?key=w5b8sjYU&format=json&imgonly=true")
+//     .type('json')
+//     .end(function(response){
+//       var output = response.body.artObject;
+//       processRijks(output);
+//     });
+//   }
+// };
+
+var getRijks = function (){
+  var objectsArray = [];
+  var objectsString = fs.readFileSync('OilPaintingObjectNums.json', 'utf8');
+  objectsArray = JSON.parse(objectsString);
+
+  for (var i = objectsArray.length - 1; i >= 0; i--) {
+    unirest.get("https://www.rijksmuseum.nl/api/en/collection/"+objectsArray[i]+"?key=w5b8sjYU&format=json&imgonly=true")
     .type('json')
     .end(function(response){
-      var output = response.body.artObject;
-      processRijks(output);
+      if (response.body.artObject.webImage){
+        var output = response.body.artObject;
+        processRijks(output);
+      };
     });
-  }
+  };
+}; 
 
-  
-};
 
 
 getRijks();
