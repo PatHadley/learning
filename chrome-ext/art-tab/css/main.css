@@ -1,0 +1,33 @@
+html {
+  background-color: #222;
+  font-family: 'Raleway', sans-serif;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  -webkit-background-repeat: no-repeat;
+     -moz-background-repeat: no-repeat;
+       -o-background-repeat: no-repeat;
+          background-repeat: no-repeat;
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+  -webkit-background-position: center;
+     -moz-background-position: center;
+       -o-background-position: center;
+          background-position: center;
+}
+
+#labels {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  color: rgba(220, 220, 220, 0.7);
+}
+
+h1 {
+  font-size: 1.6em;
+  line-height: 2em;
+}
