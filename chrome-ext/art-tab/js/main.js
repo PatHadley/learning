@@ -10,9 +10,6 @@ $(function(){
 
   var randomArtefact = $(artefacts[randomNum]);
 
-
-  // artefactToLoad = '<div id="labels"><h3>'+randomArtefact[0].title+'</h3><p>'+randomArtefact[0].creator+'</p></div><img id="hero" src="'+randomArtefact[0].imgUrl+'">'
-
   artefactToLoad = '<div id="labels"><h1>'+randomArtefact[0].title+'</h1><p>'+randomArtefact[0].creator+'</p></div>'
 
   $("#container").css({'background-image': 'url('+randomArtefact[0].imgUrl+')'});
