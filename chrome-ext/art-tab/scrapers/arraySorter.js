@@ -1,14 +1,23 @@
 const fs = require('fs');
 
 var objectsArray = [];
-var objectsString = fs.readFileSync('scrapers/rijksNumbers.json', 'utf8');
+var objectsString = fs.readFileSync('js/rijksObjects.js', 'utf8');
 objectsArray = JSON.parse(objectsString);
 
-var sortedArray = objectsArray.sort();
+function uniq(a) {
+   return Array.from(new Set(a));
+}
 
-var sortedArray = JSON.stringify(sortedArray);
+var uniqueArray = uniq(objectsArray);
+
+console.log(uniqueArray);
+
+
+// var sortedArray = uniqueArray.sort();
+
+// var sortedArray = JSON.stringify(sortedArray);
 // console.log(sortedArray);
 
-fs.writeFile('scrapers/rijksNumbersSorted.json', "["+sortedArray+"]", function(err){
-  if (err) return console.log(err);
-});
+// fs.writeFile('js/rijksObjects2.js', "["+sortedArray+"]", function(err){
+//   if (err) return console.log(err);
+// });

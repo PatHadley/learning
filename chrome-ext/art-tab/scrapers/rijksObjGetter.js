@@ -17,15 +17,15 @@ var writeArray = function(objectDetails){
 
 
 var processRijks = function(output){
-  if (output.principalMakers){
+  if (output.principalMakers[0]){
     var currentObject = {
       id: output.objectNumber,
       title: output.title,
       creator: output.principalMakers[0].name,
       imgUrl: output.webImage.url
     };
-    console.log("Worked with: "+currentObject);
     currentObjString = JSON.stringify(currentObject);
+    console.log("Worked with named: "+currentObjString);
     objectDetails.push('\n'+currentObjString);
     writeArray(objectDetails);
 
@@ -36,8 +36,8 @@ var processRijks = function(output){
       creator: "anonymous",
       imgUrl: output.webImage.url
     };
-    console.log("Worked with: "+currentObject);
     currentObjString = JSON.stringify(currentObject);
+    console.log("Worked with anon: "+currentObjString);
     objectDetails.push('\n'+currentObjString);
     writeArray(objectDetails);
   };
@@ -48,7 +48,7 @@ var getRijks = function (){
   var objectsString = fs.readFileSync('scrapers/rijksNumbers.json', 'utf8');
   objectsArray = JSON.parse(objectsString);
 
-  for (var i = 0; i < (objectsArray.length/10); i++) {
+  for (var i = 0; i < (objectsArray.length); i++) {
 
      // console.log("https://www.rijksmuseum.nl/api/en/collection/"+objectsArray[i]+"?key=w5b8sjYU&format=json&imgonly=true");
 
