@@ -16,6 +16,7 @@ console.log("I'm working!");
 
 
 var rootPath = 'scrapers/tate/artworks';
+// var rootPath = 'scrapers/tate/artworks/a/000/a00001-1035.json';
 
 
 
@@ -49,8 +50,24 @@ var fileGetter = function(location){
     if (err) {
       console.log('error');
       throw err;
+    } else if (stats.isFile()) {
+      console.log ("I'm a file");
+      fileReader(location);
+    } else if (stats.isDirectory()) {
+      console.log ("I'm a directory");
+      fs.readdir(location, function (err, files){
+        if (err) {
+          console.log('error');
+          throw err;
+        }
+        console.log("Files: "+files);
+        for (var i = files.length - 1; i >= 0; i--) {
+          var newLoc = location +"/"+ files[i];
+          console.log (newLoc);
+        }
+      })
     }
-    console.log(stats);
+
   })
 }
 
@@ -58,10 +75,6 @@ var fileGetter = function(location){
 
 
 fileGetter(rootPath);
-
-
-
-
 
 
 
@@ -82,23 +95,6 @@ fileGetter(rootPath);
 
 // // objGetter();
 
-
-
-// var statGetter = function(p, files){
-//   // var p = "scrapers/tate/artworks/a/000";
-
-//   fs.stat(p, function (err, stats) {
-//     if (err) {
-//       console.log('error');
-//       throw err;
-//     }
-//     console.log(stats);
-
-//     if (stats.isFile()){
-//       console.log("this is where we get the file's contents")
-//     } else if (stats.isDirectory()){
-//       console.log("look at the next directory?")
-//     }
 
 
 
