@@ -36,7 +36,7 @@ var processRijks = function(output){
       creator: "anonymous",
       imgUrl: output.webImage.url
     };
-    currentObjString = JSON.stringify(currentObject);
+    var currentObjString = JSON.stringify(currentObject);
     console.log("Worked with anon: "+currentObjString);
     objectDetails.push('\n'+currentObjString);
     writeArray(objectDetails);
