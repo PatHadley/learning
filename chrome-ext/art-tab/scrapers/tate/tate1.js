@@ -9,39 +9,55 @@ console.log("I'm working!");
 //   if contents are files
 //     read all file contents
 //     if file includes thumbnailURL
-//       write object with: acno, all_artists, shortTitle, thumbnailURL (subs _10 for _8), url
+//       write object with: acno, all_artists, shortTitle, thumbnailUrl (subs _10 for _8), url
 //       add object to array
 //       write array to file
 //     else do nothing
 
 
-path = 'scrapers/tate/artworks/000/a00039-1073.json'
+var rootPath = 'scrapers/tate/artworks';
 
-var fileReader = function(path){
-  fs.readFile(path, (err, data) => {
-    if (err) throw err;
-    console.log(data);
-  });
+
+
+
+var fileReader = function(location){
+  var oneFile = fs.readFileSync(location, 'utf8');
+
+  var fileString = JSON.parse(oneFile);
+
+  if (fileString.thumbnailUrl){
+    var usefulInfo = {
+      iD: fileString.acno,
+      title: fileString.catalogueGroup.shortTitle,
+      creator: fileString.all_artists,
+      imgUrl: fileString.thumbnailUrl.replace(/_8/i, '_10'),
+      link: fileString.url
+    };
+    console.log(usefulInfo);
+  }
+
+  
+};
+
+// fileReader(location);
+
+
+
+
+var fileGetter = function(location){
+  fs.stat(location, function(err, stats){
+    if (err) {
+      console.log('error');
+      throw err;
+    }
+    console.log(stats);
+  })
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fileGetter(rootPath);
 
 
 
