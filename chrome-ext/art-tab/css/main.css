@@ -32,3 +32,13 @@ h1 {
   line-height: 2em;
 }
 
+h2, p {
+  color: #ccc;
+}
+
+.menu {
+  margin: 20px;
+}
+form {
+  margin: 10px;
+}

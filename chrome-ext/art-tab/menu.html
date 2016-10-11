@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Art-Tab Options</title>
+    <meta charset="utf-8">
+    <title>Art-tab Options</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js" ></script>
+    <script type="text/javascript" src="js/rijksObjects.js" ></script>
+    <script type="text/javascript" src="js/tateObjects.js" ></script>
+    <script type="text/javascript" src="js/main.js" ></script>
   </head>
   <body>
-    <h1>Testing!</h1>
+    <main class="menu">
+      <h2>Collection selector</h2>
+      <form>
+        <div>
+          <p>Tate</p>
+          <input id="tateSelect" type="checkbox" name="Tate Collection" label="Tate Collection">
+        </div>
+        <div>
+           <p>Rijksmuseum</p>
+           <input id="rijkSelect" type="checkbox" name="Rijksmuseum Collection" label="Rijksmuseum Collection">
+        </div>
+      </form>
+    </main>
   </body>
 </html>
