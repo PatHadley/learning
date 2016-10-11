@@ -1,5 +1,5 @@
 const fs = require('graceful-fs');
-// const es = require("event-stream");
+const es = require("event-stream");
 
 console.log("I'm working!");
 
@@ -8,10 +8,12 @@ var rootPath = 'scrapers/tate/artworks';
 var objectDetails = [];
 
 var writeArray = function(objectDetails){
-  console.log(objectDetails);
-  fs.appendFile('scrapers/tate/tateObjects.json', objectDetails, function(err){
-    if (err) return console.log(err);
-  });
+  // console.log(objectDetails);
+  var rstream = fs.createReadStream(objectDetails);
+  console.log(rstream);
+  // fs.appendFile('scrapers/tate/tateObjects.json', objectDetails, function(err){
+  //   if (err) return console.log(err);
+  // });
 
 };
 
