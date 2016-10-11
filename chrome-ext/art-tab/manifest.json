@@ -3,6 +3,10 @@
   "description": "See a lovely new artwork in each tab you open",
   "version": "0.1",
   "incognito": "split",
+  "browser_action":{
+    "default_popup": "menu.html",
+    "default_title": "Art-Tab Options"
+  },
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
