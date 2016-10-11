@@ -16,7 +16,7 @@ var writeArray = function(objectDetails){
 
   var objectString = JSON.stringify(objectDetails);
 
-  fs.appendFileSync('scrapers/tate/tateObjects.json', (objectString+'\n'), 'utf8');
+  fs.appendFileSync('scrapers/tate/tateObjects.json', (objectString+',\n'), 'utf8');
 
 };
 
@@ -28,7 +28,7 @@ var fileReader = function(location){
   if (fileInfo.thumbnailUrl){
     var usefulInfo = {
       iD: fileInfo.acno,
-      title: fileInfo.catalogueGroup.title,
+      title: fileInfo.title,
       creator: fileInfo.all_artists,
       imgUrl: fileInfo.thumbnailUrl.replace(/_8/i, '_10'),
       link: fileInfo.url
