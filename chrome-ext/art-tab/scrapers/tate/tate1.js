@@ -9,11 +9,14 @@ var objectDetails = [];
 
 var writeArray = function(objectDetails){
   // console.log(objectDetails);
-  var rstream = fs.createReadStream(objectDetails);
-  console.log(rstream);
+
   // fs.appendFile('scrapers/tate/tateObjects.json', objectDetails, function(err){
   //   if (err) return console.log(err);
   // });
+
+  var objectString = JSON.stringify(objectDetails);
+
+  fs.appendFileSync('scrapers/tate/tateObjects.json', (objectString+'\n'), 'utf8');
 
 };
 
@@ -25,7 +28,7 @@ var fileReader = function(location){
   if (fileInfo.thumbnailUrl){
     var usefulInfo = {
       iD: fileInfo.acno,
-      title: fileInfo.catalogueGroup.shortTitle,
+      title: fileInfo.catalogueGroup.title,
       creator: fileInfo.all_artists,
       imgUrl: fileInfo.thumbnailUrl.replace(/_8/i, '_10'),
       link: fileInfo.url
