@@ -10,8 +10,8 @@ $(function(){
 
 
   $('#collSelector').ajaxForm(function(){
-    
-  })
+
+  });
 
 
 
