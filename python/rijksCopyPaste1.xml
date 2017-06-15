@@ -1,0 +1,110 @@
+<artObjectGetResponse>
+    <elapsedMilliseconds>27</elapsedMilliseconds>
+    <artObject>
+        <links>
+            <search>https://www.rijksmuseum.nl/api/nl/collection</search>
+        </links>
+        <id>en-RP-T-2015-1</id>
+        <priref>575997</priref>
+        <objectNumber>RP-T-2015-1</objectNumber>
+        <language>en</language>
+        <title>Ontwerp voor een wandtafel (linkerhelft)</title>
+        <copyrightHolder />
+        <webImage>
+            <guid>65a573c2-901f-418b-a932-46834abf5ce7</guid>
+            <offsetPercentageX>50</offsetPercentageX>
+            <offsetPercentageY>50</offsetPercentageY>
+            <width>2362</width>
+            <height>2500</height>
+            <url>http://lh3.googleusercontent.com/9xKc7zAx5joEzg3Tb1vbDRuQm-UjWC6pgy5jHzc1cFtZMuI9nP6wORhFDsbN9Nj3trgwRXkbvA6RKC9O_3dstwiPwY0=s0</url>
+        </webImage>
+        <titles>Ontwerp voor een wandtafel (linkerhelft)</titles>
+        <description />
+        <labelText />
+        <principalMakers>
+            <name>anonymous</name>
+            <unFixedName>anonymous</unFixedName>
+            <placeOfBirth />
+            <dateOfBirth />
+            <dateOfBirthPrecision />
+            <dateOfDeath />
+            <dateOfDeathPrecision />
+            <placeOfDeath />
+            <roles>draughtsman</roles>
+            <nationality />
+            <biography />
+            <productionPlaces>Italy</productionPlaces>
+            <qualification />
+        </principalMakers>
+        <plaqueDescriptionDutch />
+        <plaqueDescriptionEnglish />
+        <principalMaker>anonymous</principalMaker>
+        <artistRole />
+        <acquisition>
+            <method />
+            <date>2014-11-20T00:00:00Z</date>
+            <creditLine>Purchased with the support of the Decorative Art Fund/Rijksmuseum Fonds, made available by Mr and Mrs Litsenburg-van Royen</creditLine>
+        </acquisition>
+        <materials>paper</materials>
+        <materials>ink</materials>
+        <techniques>pen</techniques>
+        <techniques>brush</techniques>
+        <productionPlaces>Italy</productionPlaces>
+        <dating>
+            <early>1780-01-01T00:00:00Z</early>
+            <earlyPrecision>c.</earlyPrecision>
+            <late>1780-01-01T00:00:00Z</late>
+            <latePrecision>c.</latePrecision>
+            <year>1780</year>
+            <yearEarly>1780</yearEarly>
+            <yearLate>1780</yearLate>
+            <period>18</period>
+        </dating>
+        <classification>
+            <objectNumbers>RP-T-2015-1</objectNumbers>
+        </classification>
+        <hasImage>true</hasImage>
+        <principalOrFirstMaker>anonymous</principalOrFirstMaker>
+        <dimensions>
+            <unit>mm</unit>
+            <type>height</type>
+            <part />
+            <value>188</value>
+        </dimensions>
+        <dimensions>
+            <unit>mm</unit>
+            <type>width</type>
+            <part />
+            <value>165</value>
+        </dimensions>
+        <physicalMedium>pen</physicalMedium>
+        <longTitle>Ontwerp voor een wandtafel (linkerhelft), anonymous, c. 1780</longTitle>
+        <subTitle>h 188mm × w 165mm</subTitle>
+        <scLabelLine>anonymous, c. 1780, pen</scLabelLine>
+        <label>
+            <title />
+            <makerLine />
+            <description />
+            <notes />
+            <date />
+        </label>
+        <showImage>true</showImage>
+        <location />
+    </artObject>
+    <artObjectPage>
+        <id>en-RP-T-2015-1</id>
+        <lang>en</lang>
+        <objectNumber>RP-T-2015-1</objectNumber>
+        <plaqueDescription />
+        <audioFile1 />
+        <audioFileLabel1 />
+        <audioFileLabel2 />
+        <createdOn>0001-01-01T00:00:00Z</createdOn>
+        <updatedOn>0001-01-01T00:00:00Z</updatedOn>
+        <adlibOverrides>
+            <titel />
+            <maker />
+            <etiketText />
+        </adlibOverrides>
+    </artObjectPage>
+</artObjectGetResponse>
