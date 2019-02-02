@@ -1,0 +1,12 @@
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" >
+    <pattern id="basic_structure">
+        <rule context="artObject">
+            <assert test="links">'links' element is missing</assert>
+            <report test="links">'links' element is present</report>
+        </rule>
+        <rule context="links">
+            <assert test="normalize-space(.) = 'https://www.rijksmuseum.nl/api/nl/collection'">No link</assert>
+            <report test="normalize-space(.) = 'https://www.rijksmuseum.nl/api/nl/collection'">Link present</report>
+        </rule>
+    </pattern>
+</schema>
